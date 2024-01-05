@@ -17,7 +17,9 @@ bankE = 'http://djfubonholdingfund.fbs.com.tw' #富邦證券
 
 my_Banks = random.choice([bankA, bankB, bankC, bankD, bankE])
 '''
-
+import pandas as pd 
+import requests
+from bs4 import BeautifulSoup
 
 def GetStockName(stock_id):  #由stock6改為stock6score 2020/5/7##計算六大指標平均 
 
