@@ -1,7 +1,9 @@
 from module_PERseg import PERsegx
-from .views_tseotc_id import *
+
 from django.shortcuts import render
 from module import func2
+from .views_tseotc_id import *
+
 
 def stockPERsegx(request):   #查詢本益比區間，給付費使用者使用。
     if request.method == "POST":  #假如是以POST方式才處理
