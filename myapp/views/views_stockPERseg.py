@@ -1,5 +1,5 @@
-from .views_tseotc_id import *
 from module_PERseg import PERsegx
+from .views_tseotc_id import *
 from django.shortcuts import render
 from module import func2
 
