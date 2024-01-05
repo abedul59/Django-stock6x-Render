@@ -1,3 +1,23 @@
+a = 'https://www.google.com.tw'
+b = 'https://tw.yahoo.com'
+c = 'https://www.pchome.com.tw/'
+d = 'https://djinfo.cathaysec.com.tw/'
+import random
+my_Referer = random.choice([a,b,c,d])
+
+my_UserAgent = 'Mozilla/5.0 (Macintosh Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36'
+
+#stock_id = "2002"
+'''
+bankA = 'http://dj.mybank.com.tw/' #國泰世華
+bankB = 'http://jdata.yuanta.com.tw/' #元大
+bankC = 'http://jsjustweb.jihsun.com.tw' #日盛
+bankD = 'http://stockchannel.sinotrade.com.tw' #永豐金證券
+bankE = 'http://djfubonholdingfund.fbs.com.tw' #富邦證券
+
+my_Banks = random.choice([bankA, bankB, bankC, bankD, bankE])
+'''
+
 
 def GetStockName(stock_id):  #由stock6改為stock6score 2020/5/7##計算六大指標平均 
 
