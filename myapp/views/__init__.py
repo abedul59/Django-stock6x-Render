@@ -14,8 +14,8 @@ Created on Mon Apr 18 09:00:06 2022
 
 #from .views_monthlyAlterStuff import *
 from .views_stock6 import *  #要有「點」
-
-
+from .views_stockPERseg import *  #要有「點」
+from .views_tseotc_id import *  #要有「點」
 """
 from .views_stock6DB import *  #要有「點」
 
