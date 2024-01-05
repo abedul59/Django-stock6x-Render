@@ -25,6 +25,7 @@ urlpatterns = [
             #path('callback/', views.callback),
             #re_path('^callback', views.callback),
         path('stock6x/', views.stock6x),
+        path('stockPERsegx/', views.stockPERsegx),
 	]
 
 
