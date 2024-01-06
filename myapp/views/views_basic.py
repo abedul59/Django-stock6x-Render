@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def index(request, pageindex=None):  #首頁
+def index(request):  #首頁
     
 
 	return render(request, "index.html", locals())
