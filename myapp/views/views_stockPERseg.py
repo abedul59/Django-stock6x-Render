@@ -1,7 +1,7 @@
 from module_PERseg import PERsegx
 
 from django.shortcuts import render
-from module import func2, tseotc_id
+from module import func2, tseotcid
 #from .views_tseotc_id import *
 
 
@@ -12,10 +12,10 @@ def stockPERsegx(request):   #查詢本益比區間，給付費使用者使用�
         #mess = request.POST['stockid']  #取得表單輸入內容
         mess0 = request.POST['stockid']  #取得表單輸入內容
         
-        if tseotc_id.is_number(mess0) == True:  #是數字
+        if tseotcid.is_number(mess0) == True:  #是數字
             mess = mess0
         else:
-            mess = tseotc_id.tseotc_dict[mess0]
+            mess = tseotcid.tseotc_dict[mess0]
 
         mess2 = request.POST['monthid']
 
