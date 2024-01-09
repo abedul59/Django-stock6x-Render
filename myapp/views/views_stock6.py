@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import os
 
-from module import func2x, tseotc_id
+from module import func2x, tseotcid
 #from .views_tseotc_id import *
 
 
@@ -11,10 +11,10 @@ def stock6x(request):  #查詢六大指標，給付費使用者使用
     if request.method == "POST":  #假如是以POST方式才處理
         mess0 = request.POST['stockid']  #取得表單輸入內容
         
-        if tseotc_id.is_number(mess0) == True:  #是數字
+        if tseotcid.is_number(mess0) == True:  #是數字
             mess = mess0
         else:
-            mess = tseotc_id.tseotc_dict[mess0]
+            mess = tseotcid.tseotc_dict[mess0]
         
         result2, ProfitN, Profit, b1N, b2N, b3N, b4N, b5N, b6N, b7N, b8N, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b10p, result5, InvTON, InvTO, e1N, e2N, e3N, e4N, e5N, e6N, e7N, e8N, e1, e2, e3, e4, e5, e6, e7, e8, newest_Fin_Q = func2x.stock_Prof2_InvTO5(mess)
         result3, NetIncomeN, NetIncome, c1N, c2N, c3N, c4N, c5N, c6N, c7N, c8N, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, pc9, pc10, pc11, result4, EPSN, EPS, d1N, d2N, d3N, d4N, d5N, d6N, d7N, d8N, d1, d2, d3, d4, d5, d6, d7, d8 = func2x.stock_NetInc3_EPS4(mess)
