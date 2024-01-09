@@ -5,14 +5,31 @@ from module import func2, tseotcid
 #from .views_tseotc_id import *
 
 
-
+###################################################################
+#################################判斷是否為數字的自創函數
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        pass
+ 
+    try:
+        import unicodedata
+        unicodedata.numeric(s)
+        return True
+    except (TypeError, ValueError):
+        pass
+ 
+    return False
+####################################台股代號
 
 def stockPERsegx(request):   #查詢本益比區間，給付費使用者使用。
     if request.method == "POST":  #假如是以POST方式才處理
         #mess = request.POST['stockid']  #取得表單輸入內容
         mess0 = request.POST['stockid']  #取得表單輸入內容
         
-        if tseotcid.is_number(mess0) == True:  #是數字
+        if is_number(mess0) == True:  #是數字
             mess = mess0
         else:
             mess = tseotcid.tseotc_dict[mess0]
