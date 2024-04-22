@@ -1,9 +1,9 @@
-Django==3.2
+Django==2.0
 gunicorn
 pandas
 numpy
 beautifulsoup4
 requests
 lxml
-pip
+
 
