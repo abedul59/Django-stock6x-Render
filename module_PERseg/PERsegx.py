@@ -62,34 +62,34 @@ def PERsegx(stock_id, month_id):
         dfs = pd.read_html(str(table))
 
 
-        #2021/12/31 欄位已改變 12/30最後交易日
-        ls1  = dfs[0].iloc[-1] #2021/110年
-        ls2  = dfs[0].iloc[-2] #2020/109年
-        ls3  = dfs[0].iloc[-3] #108年
-        ls4  = dfs[0].iloc[-4] #107年
-        ls5  = dfs[0].iloc[-5] #106年
-        ls6  = dfs[0].iloc[-6] #105年        
+        #2021/12/31 欄位已改變 12/30最後交易日 2024/1/9修改
+        ls1  = dfs[0].iloc[-1] #2023/112年
+        ls2  = dfs[0].iloc[-2] #2022/111年
+        ls3  = dfs[0].iloc[-3] #110年
+        ls4  = dfs[0].iloc[-4] #109年
+        ls5  = dfs[0].iloc[-5] #108年
+        ls6  = dfs[0].iloc[-6] #107年        
 
-        H1 = ls1[4] #110年最高價
-        L1 = ls1[6] #110年最低價
+        H1 = ls1[4] #112年最高價
+        L1 = ls1[6] #112年最低價
 
-        H2 = ls2[4] #2020/109年最高價
-        L2 = ls2[6] #109年最低價
+        H2 = ls2[4] #2021/111年最高價
+        L2 = ls2[6] #111年最低價
 
-        H3 = ls3[4] #108年最高價
-        L3 = ls3[6] #108年最低價
+        H3 = ls3[4] #110年最高價
+        L3 = ls3[6] #110年最低價
 
-        H4 = ls4[4] #107年最高價
-        L4 = ls4[6] #107年最低價
+        H4 = ls4[4] #109年最高價
+        L4 = ls4[6] #109年最低價
 
-        H5 = ls5[4] #106年最高價
-        L5 = ls5[6] #106年最低價
+        H5 = ls5[4] #108年最高價
+        L5 = ls5[6] #108年最低價
 
-        H6 = ls6[4] #105年最高價
-        L6 = ls6[6] #105年最低價
+        H6 = ls6[4] #107年最高價
+        L6 = ls6[6] #107年最低價
 
 
-        #print(H5)
+        print(H1)
         #print(L5)
               
         ##抓取上市今年最高價 一個月一個月抓，再算最大值
@@ -309,7 +309,7 @@ def PERsegx(stock_id, month_id):
         print(xEPSList)
         ######2021/03/13 Q4財報出來大修改  20211224 MoneyDJ大改版
         
-        if eps1N == '2022':  #在3/31前，Q4財報先出來的情況  年度轉換時還不適用
+        if eps1N == '2023':  #在3/31前，Q4財報先出來的情況  年度轉換時還不適用
             
             eps1 = xEPSList[2] #dfs[2][1][98] #最新1年的合併總損益 每股盈餘 2021
             eps2 = xEPSList[3] #dfs[2][2][98] #最新2年的合併總損益 每股盈餘 2020
@@ -345,7 +345,7 @@ def PERsegx(stock_id, month_id):
             PER_L = min(PER_L_average,PER_L1)  #本益比低點與最新孰低  
 
           
-        elif eps1N == '2021':  #3/31前，Q4財報還沒出來的情況 沒有2021的全年EPS
+        elif eps1N == '2022':  #3/31前，Q4財報還沒出來的情況 沒有2021的全年EPS
     ####2020/07/02 加入本益比成長率
             #2021EPS還沒出來的情況   #2021/12/31修改 欄位已改變 12/30最後交易日
             eps1 = xEPSList[2] #dfs[2][1][98] #最新1年的合併總損益 每股盈餘 2020
@@ -421,34 +421,34 @@ def PERsegx(stock_id, month_id):
 
         if (tablelen == 6):  #原本 ==8  #去掉當年，只有過去5年資料  2022/2/18新增 2022/1/4 修改
             
-            ls0 =  dfs[0].iloc[0] #當年 111年 #2021/1/6更改
-            ls1 =  dfs[0].iloc[1] #110年
-            ls2 =  dfs[0].iloc[2] #109年
-            ls3 =  dfs[0].iloc[3] #108年
-            ls4 =  dfs[0].iloc[4] #107年
-            ls5 =  dfs[0].iloc[5] #106年
-            ls6 =  None #105年
+            ls0 =  dfs[0].iloc[0] #當年 113年 #2024/1/9更改
+            ls1 =  dfs[0].iloc[1] #112年
+            ls2 =  dfs[0].iloc[2] #111年
+            ls3 =  dfs[0].iloc[3] #110年
+            ls4 =  dfs[0].iloc[4] #109年
+            ls5 =  dfs[0].iloc[5] #108年
+            ls6 =  None #107年
             
             #print(ls6)
 
 
-            H0 = ls0[5] #111年目前已出現過的最高價
+            H0 = ls0[5] #113年目前已出現過的最高價
         #L0 = ls0[6] #109年目前已出現過的最低價
 
-            H1 = ls1[5] #110/2021年最高價
-            L1 = ls1[7] #110年最低價
+            H1 = ls1[5] #112/2023年最高價
+            L1 = ls1[7] #112年最低價
              ############2020EPS尚未公佈
-            H2 = ls2[5] #109年最高價
-            L2 = ls2[7] #109年最低價
+            H2 = ls2[5] #111年最高價
+            L2 = ls2[7] #111年最低價
 
-            H3 = ls3[5] #108年最高價
-            L3 = ls3[7] #108年最低價
+            H3 = ls3[5] #110年最高價
+            L3 = ls3[7] #110年最低價
 
-            H4 = ls4[5] #107年最高價
-            L4 = ls4[7] #107年最低價
+            H4 = ls4[5] #109年最高價
+            L4 = ls4[7] #109年最低價
             
-            H5 = ls5[5] #106年最高價
-            L5 = ls5[7] #106年最低價
+            H5 = ls5[5] #108年最高價
+            L5 = ls5[7] #108年最低價
 
             H6 = None #105年最高價
             L6 = None #105年最低價
@@ -462,7 +462,7 @@ def PERsegx(stock_id, month_id):
 #dfs[2][1] 由左至右 第一欄 最新季
 #dfs[2][1][98] #最新1年的合併總損益 每股盈餘
                     #2023/3/7 3-4月間要改年分2022/2021
-            if eps1N == '2022':  #在三月時，Q4財報先出來的情況
+            if eps1N == '2023':  #在三月時，Q4財報先出來的情況
             
                 eps1 = xEPSList[2] #dfs[2][1][98] #最新1年的合併總損益 每股盈餘 2021
                 eps2 = xEPSList[3] #dfs[2][2][98] #最新2年的合併總損益 每股盈餘 2020
@@ -493,7 +493,7 @@ def PERsegx(stock_id, month_id):
                 PER_H = min(PER_H_average,PER_H1)  #本益比高點與最新孰低
                 PER_L = min(PER_L_average,PER_L1)  #本益比低點與最新孰低
                 
-            elif eps1N == '2021':  #在三月時，Q4財報還沒出來的情況
+            elif eps1N == '2022':  #在三月時，Q4財報還沒出來的情況
             
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2020
                 eps2 = xEPSList[3] #最新2年的合併總損益 每股盈餘 2019
@@ -565,7 +565,7 @@ def PERsegx(stock_id, month_id):
 #dfs[2][1] 由左至右 第一欄 最新季
 #dfs[2][1][98] #最新1年的合併總損益 每股盈餘
                     #2023/3/7 3-4月間要改年分2022/2021
-            if eps1N == '2022':  #在三月時，Q4財報先出來的情況
+            if eps1N == '2023':  #在三月時，Q4財報先出來的情況
             
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2021
                 eps2 = xEPSList[3] #最新2年的合併總損益 每股盈餘 2020
@@ -595,7 +595,7 @@ def PERsegx(stock_id, month_id):
                 PER_H = min(PER_H_average,PER_H1)  #本益比高點與最新孰低
                 PER_L = min(PER_L_average,PER_L1)  #本益比低點與最新孰低
 
-            elif eps1N == '2021':  #在三月時，Q4財報還沒出來的情況
+            elif eps1N == '2022':  #在三月時，Q4財報還沒出來的情況
             
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2020
                 eps2 = xEPSList[3] #最新2年的合併總損益 每股盈餘 2019
@@ -672,7 +672,7 @@ def PERsegx(stock_id, month_id):
 #dfs[2][1] 由左至右 第一欄 最新季
 #dfs[2][1][98] #最新1年的合併總損益 每股盈餘
          #2023/3/7 3-4月間要改年分2022/2021
-            if eps1N == '2022':  #在3/31前，Q4財報先出來的情況
+            if eps1N == '2023':  #在3/31前，Q4財報先出來的情況
 
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2021
                 eps2 = xEPSList[3]#最新2年的合併總損益 每股盈餘 2020
@@ -703,7 +703,7 @@ def PERsegx(stock_id, month_id):
                 PER_H = min(PER_H_average,PER_H1)  #本益比高點與最新孰低
                 PER_L = min(PER_L_average,PER_L1)  #本益比低點與最新孰低
 
-            elif eps1N == '2021':  #在三月時，Q4財報還沒出來的情況
+            elif eps1N == '2022':  #在三月時，Q4財報還沒出來的情況
 
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2020
                 eps2 = xEPSList[3] #最新2年的合併總損益 每股盈餘 2019
@@ -779,7 +779,7 @@ def PERsegx(stock_id, month_id):
 #dfs[2][1] 由左至右 第一欄 最新季
 #dfs[2][1][98] #最新1年的合併總損益 每股盈餘
                     #2023/3/7 3-4月間要改年分2022/2021
-            if eps1N == '2022':  #在三月時，Q4財報先出來的情況
+            if eps1N == '2023':  #在三月時，Q4財報先出來的情況
 
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2021
                 eps2 = xEPSList[3] #None #最新2年的合併總損益 每股盈餘 2020
@@ -811,7 +811,7 @@ def PERsegx(stock_id, month_id):
                 PER_L = PER_L_average #min(PER_L_average,PER_L1)  #本益比低點與最新孰低
 
 
-            elif eps1N == '2021':  #在三月時，Q4財報還沒出來的情況
+            elif eps1N == '2022':  #在三月時，Q4財報還沒出來的情況
 
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2020
                 eps2 = None #最新2年的合併總損益 每股盈餘 2019
@@ -886,7 +886,7 @@ def PERsegx(stock_id, month_id):
 
 
 #dfs[2] 真        #2023/3/7 3-4月間要改年分2022/2021
-            if eps1N == '2022':  #在三月時，Q4財報先出來的情況
+            if eps1N == '2023':  #在三月時，Q4財報先出來的情況
 
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2020
                 eps2 = xEPSList[3] #最新2年的合併總損益 每股盈餘 2019
@@ -915,7 +915,7 @@ def PERsegx(stock_id, month_id):
                 PER_H = min(PER_H_average,PER_H1)  #本益比高點與最新孰低
                 PER_L = min(PER_L_average,PER_L1)  #本益比低點與最新孰低
 
-            elif eps1N == '2021':  #在三月時，Q4財報還沒出來的情況
+            elif eps1N == '2022':  #在三月時，Q4財報還沒出來的情況
 
                 eps1 = xEPSList[2] #最新1年的合併總損益 每股盈餘 2020
                 eps2 = xEPSList[3] #最新2年的合併總損益 每股盈餘 2019
@@ -1589,7 +1589,7 @@ def PERsegx(stock_id, month_id):
 ###############預估 淨利 EPS
     Net_Predict = round(Rev_Predict*Net4Average,6)
     #2021/2/28新增
-    if eps1N == '2022' :
+    if eps1N == '2023' :
         
         Q4_Net_Predict = None
         
@@ -1631,7 +1631,7 @@ def PERsegx(stock_id, month_id):
 ####################計算預估EPS
     Predict_EPS = round(Net_Predict/capital_stock*10,2) #2021
     #2021/2/28新增  3/12更改Q3 Q4並存情況  4/16再修改精簡
-    if eps1N == '2022' :
+    if eps1N == '2023' :
         #pass
         Predict_EPS0 = eps1
     else:
@@ -1699,4 +1699,4 @@ def PERsegx(stock_id, month_id):
     return H1, H2, H3, H4, H5, L1, L2, L3, L4, L5, eps1, eps2, eps3, eps4, eps5, PER_H1, PER_H2, PER_H3, PER_H4, PER_H5, PER_L1, PER_L2, PER_L3, PER_L4, PER_L5, PER_H_average, PER_L_average, PER_H, PER_L, rYoY1N, rYoY2N, rYoY3N, rYoY4N, rYoY5N, rYoY6N, rYoY1, rYoY2, rYoY3, rYoY4, rYoY5, rYoY6, RevYoY, rYoY6Average, r1N, r2N, r3N, r4N, r5N, r6N, r7N, r8N, r9N, r10N, r11N, r12N, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, Rev_Predict, Net1N, Net2N, Net3N, Net4N, Net1, Net2, Net3, Net4, Net4Average, Net_Predict, capital_stock, Predict_EPS, Predict_high_price, Predict_low_price, yahoo_latest_tradePrice, New_up_profit, New_down_loss, risk_reward, pYoY1, pYoY2, pYoY3, pYoY4, pYoY5, pYoY6, pRevYoY, pYoY6Average, pNet1, pNet2, pNet3, pNet4, pNet4Average, H0, thisYear_Sum, theRest_Predict, H6, L6, Predict_EPS0, eps1N
 #, epsYoY1, epsYoY2, epsYoY3, epsYoY4, PER_H_YoY1, PER_H_YoY2, PER_H_YoY3, PER_H_YoY4, PEG_H1, PEG_H2, PEG_H3, PEG_H4, PEG_L1, PEG_L2, PEG_L3, PEG_L4 
 
-#PERsegx("3034", "2")
+#PERsegx("2330", "11")

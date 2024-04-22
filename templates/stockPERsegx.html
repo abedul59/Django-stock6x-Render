@@ -15,28 +15,26 @@
 
 <body>
 
-
-
-<br><br>
-
 <table border="2" cellpadding="1" cellspacing="5"  style="border:1px solid black;margin-left:auto;margin-right:auto;">
 <tr>
-  <td align="left">
-  <form action="/stockPERsegx/" method="POST" name="form1">
-	{% csrf_token %}
-   
-    <div><FONT SIZE="7">請輸入台股代號：<input type="text" name="stockid" style="font-size:40px"></FONT>          
-    <div><FONT SIZE="7">請輸入最新已公布營收月份數字(1到12)：<input type="text" name="monthid" style="font-size:40px"></FONT>
-          
-	<br><br>
-	<input type="submit" value="送出資料" style="font-size:60px"></div>
-	<div><FONT SIZE="6">說明：以上兩個空格都必須填入。且為了正確估算未來一整年的營收，所以請按照最新已公佈的營收月份，輸入正確的數字1到12，否則出來的數據會是錯誤的。</FONT></div>
-</form>
+<td>
+
+    {% if request.user.is_authenticated %}
+    	<FONT SIZE="7">歡迎光臨！！</FONT>
+
+        <p><a href="/logout/"><FONT SIZE="7">登出</FONT></a></p>
+    {% else %}
+        <p><FONT SIZE="7">您尚未登入喔~</FONT></p>
+        <a href="/login/"><FONT SIZE="7">登入</FONT></a>
+    {% endif %}
 </td>
 </tr>
 </table>
 
 <br><br>
+
+
+
 
 <table border="2" cellpadding="1" cellspacing="5"  style="border:1px solid black;margin-left:auto;margin-right:auto;">
 <tr>
@@ -53,7 +51,7 @@
 <br><br>
 
 
-{% if eps1N == '2022' %}
+{% if eps1N == '2023' %}
 
 <table border="2" cellpadding="1" cellspacing="5"  style="border:1px solid black;margin-left:auto;margin-right:auto;">
 <caption><FONT SIZE="6">歷史股價和EPS資料（程式未排除負數和極端值）<br>（2024/3/31前，2023年Q4財報已公佈，2023/112年都是實際數據。2024/113年都為預測值。）</FONT></caption>
@@ -78,7 +76,7 @@
 
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2023/112年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2024/113年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_high_price}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_low_price}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_EPS}}</FONT></div></td>
@@ -89,7 +87,7 @@
 
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2022/111年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2023/112年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H1}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L1}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps1}}</FONT></div></td>
@@ -98,7 +96,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2021/110年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2022/111年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H2}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L2}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps2}}</FONT></div></td>
@@ -107,7 +105,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2020/109年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2021/110年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H3}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L3}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps3}}</FONT></div></td>
@@ -116,7 +114,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2019/108年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2020/109年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H4}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L4}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps4}}</FONT></div></td>
@@ -125,7 +123,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2018/107年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2019/108年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H5}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L5}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps5}}</FONT></div></td>
@@ -168,10 +166,10 @@
 
 
 
-{% elif eps1N == '2021' %}
+{% elif eps1N == '2022' %}
 
 <table border="2" cellpadding="1" cellspacing="5"  style="border:1px solid black;margin-left:auto;margin-right:auto;">
-<caption><FONT SIZE="6">歷史股價和EPS資料（程式未排除負數和極端值）<br>（在2023年4月時，2022Q4財報公佈前，2022/111年除了H和L外，都是預估值（紅色）。）</FONT></caption>
+<caption><FONT SIZE="6">歷史股價和EPS資料（程式未排除負數和極端值）<br>（在2024年4月時，2023Q4財報公佈前，2023/112年除了H和L外，都是預估值（紅色）。）</FONT></caption>
 
 
 
@@ -193,7 +191,7 @@
 
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2023/112年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2024/113年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_high_price}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_low_price}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_EPS}}</FONT></div></td>
@@ -204,7 +202,7 @@
 
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2022/111年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2023/112年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H1}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L1}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7" color="#FF0000">{{Predict_EPS0}}</FONT></div></td>
@@ -213,7 +211,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2021/110年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2022/111年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H2}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L2}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps1}}</FONT></div></td>
@@ -222,7 +220,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2020/109年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2021/110年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H3}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L3}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps2}}</FONT></div></td>
@@ -231,7 +229,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2019/108年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2020/109年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H4}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L4}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps3}}</FONT></div></td>
@@ -240,7 +238,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2018/107年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2019/108年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H5}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L5}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps4}}</FONT></div></td>
@@ -249,7 +247,7 @@
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2017/106年</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2018/107年</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{H6}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{L6}}</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{eps5}}</FONT></div></td>
@@ -420,12 +418,12 @@
 
 
 <tr>
-<td align="center"><div><FONT SIZE="7">2023年已公佈的營收總和</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">2024年已公佈的營收總和</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{thisYear_Sum}}</FONT></div></td>
 </tr>
 
 <tr>
-<td align="center"><div><FONT SIZE="7">預估2023年尚未公佈營收總和</FONT></div></td>
+<td align="center"><div><FONT SIZE="7">預估2024年尚未公佈營收總和</FONT></div></td>
 <td align="center"><div><FONT SIZE="7">{{theRest_Predict}}</FONT></div></td>
 </tr>
 
@@ -664,6 +662,11 @@
 <br>
 
 
+<table border="2" cellpadding="1" cellspacing="5"  style="border:1px solid black;margin-left:auto;margin-right:auto;">
+<tr>
+<td align="center"><a href="/usersmain/" title="usersmain"><FONT SIZE="6">回功能首頁</FONT></a></td>
+</tr>
+</table>
 
 
 </body>
