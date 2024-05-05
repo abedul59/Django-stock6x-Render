@@ -1,114 +1,14 @@
 from django.db import models
 
 # Create your models here.
-from django.contrib.auth.models import User
-
-
-
-    
-class Person(User):
-    cName = models.CharField(max_length=20, default='')
-    cCellphone = models.CharField(max_length=10, default='')
-
-    class Meta:
-        permissions = (
-            ("Can_enter_stock6", "Can enter stock6"),
-            ("Can_enter_stock6 DB", "Can enter stock6 DB"),
-            ("Can_enter_stockPERseg", "Can enter stockPERseg"),
-            ("Can_enter_stockPERseg DB", "Can enter stockPERseg DB"),
-            ("Can_enter_All", "Can enter All"), 
-            ("Can_enter_PaidUsersOnly", "Can enter PaidUsersOnly"),  
-            ("Can_enter_AdminOnly", "Can enter AdminOnly"),
-            ("Can_enter_VIPsOnly", "Can enter VIPsOnly"),                
-            ("Can_enter_stockKn", "Can enter stockKn"),
-            ("Can_enter_usersmain_test168", "Can enter usersmain_test168"),
-
-        )
-    def __str__(self):
-        return self.cName
-
-class NewsUnit(models.Model):
-    catego = models.CharField(max_length=10, default='')
-    nickname = models.CharField(max_length=20, default='')
-    title = models.CharField(max_length=50, default='')
-    message = models.TextField(max_length=100, default='')
-    pubtime = models.DateTimeField(auto_now=True)
-    enabled = models.BooleanField(default=False)
-    press = models.IntegerField(default=0)
-    def __str__(self):
-        return self.title
-
-class MacroWaveA(models.Model):  
-    cDate = models.CharField(max_length=15, default='')        
-    cInvertedYieldCurve30y = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve10y = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve3m = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve6m = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve2y = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve3y = models.CharField(max_length=15, default='')    
-    cInvertedYieldCurve5y = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve7y = models.CharField(max_length=15, default='')     
- 
-    cIYC10yminus3m = models.CharField(max_length=15, default='')
-
-    cCRBindex  = models.CharField(max_length=15, default='')
-    cCRBhalfyear  = models.CharField(max_length=15, default='')    
-    cCRBoneyear  = models.CharField(max_length=15, default='')  
-    pubtime = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return self.cDate 
-    
-class MacroWaveB(models.Model):  
-    cDate = models.CharField(max_length=15, default='')        
-
-    cRecesTime  = models.CharField(max_length=15, default='')
-    cRecesNum  = models.CharField(max_length=15, default='')
-    cM1bTime   = models.CharField(max_length=15, default='')
-    cM1bNum = models.CharField(max_length=15, default='')
-    cM1bYoY = models.CharField(max_length=15, default='')
-    cMarketVaule = models.CharField(max_length=15, default='')
-    cMVTime = models.CharField(max_length=15, default='')
-    cMVvsM1b = models.CharField(max_length=15, default='')
-    
-    pubtime = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return self.cDate    
-    
-class MacroWaveC(models.Model):  
-    cDate = models.CharField(max_length=15, default='')        
-
-    cUSUnemploymentRateTime  = models.CharField(max_length=15, default='')
-    cUSUnemploymentRate  = models.CharField(max_length=15, default='')
-    cUSLeadingIndicatorTime  = models.CharField(max_length=15, default='')    
-    cUSLeadingIndicator  = models.CharField(max_length=15, default='')
-    cMichiganComsumerTime = models.CharField(max_length=15, default='')    
-    cMichiganComsumer = models.CharField(max_length=15, default='')
-    cDurableGoodsNewOrder2 = models.CharField(max_length=15, default='')
-    cDurableGoodsNewOrder1 = models.CharField(max_length=15, default='')
-
-    cChinaPMITime = models.CharField(max_length=15, default='')
-    cChinaPMI = models.CharField(max_length=15, default='')
-    
-    pubtime = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return self.cDate 
-
-    
-class USBondYieldDB(models.Model):  
-    cDate = models.CharField(max_length=15, default='')        
-    cInvertedYieldCurve10y = models.CharField(max_length=15, default='')
-    cInvertedYieldCurve3m = models.CharField(max_length=15, default='')
-    cIYC10yminus3m = models.CharField(max_length=15, default='')
-    pubtime = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return self.cDate  
-
-
 class Stock6Sign202404(models.Model):  
     cStockID = models.CharField(max_length=5, default='')
     cStockName = models.CharField(max_length=5, default='')
+    
+    
     cNewestSeason = models.CharField(max_length=15, default='')
     cNewestRev = models.CharField(max_length=15, default='')
+    
     cSign1 = models.CharField(max_length=10, default='')
     cSign2 = models.CharField(max_length=10, default='')
     cSign3 = models.CharField(max_length=10, default='')
@@ -130,6 +30,12 @@ class Stock6Sign202404(models.Model):
     sCore2306= models.CharField(max_length=10, default='')
     sCore2305= models.CharField(max_length=10, default='')
     sCore2304= models.CharField(max_length=10, default='')
+
+
+
+
+
+
 
     pubtime = models.DateTimeField(auto_now=True)
     enabled = models.BooleanField(default=False)
