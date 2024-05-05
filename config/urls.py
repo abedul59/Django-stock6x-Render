@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-
 from myapp import views
+from django.conf.urls import url
+
 
 
 urlpatterns = [
@@ -24,10 +25,22 @@ urlpatterns = [
 	    #path('', include('config.urls')),
             #path('callback/', views.callback),
             #re_path('^callback', views.callback),
-        path('index/', views.index),
+        path('index3/', views.index3),
         path('', views.index),
         path('stock6x/', views.stock6x),
         path('stockPERsegx/', views.stockPERsegx),
+
+        path('index2/', views.index2),
+        path('login2/', views.login2),
+        path('logout2/', views.logout2),
+        path('adduser/', views.adduser),
+        path('signup/', views.signup),
+
+        path('login3/', views.login3),    
+        path('logout3/', views.logout3),
+        path('index/', views.index),
+        path('login/', views.login),
+        path('logout/', views.logout),
 	]
 
 
