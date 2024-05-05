@@ -94,7 +94,7 @@ def stockPERsegx(request):   #查詢本益比區間，給付費使用者使用�
     else:
         mess = "台股代號尚未送出！"
         mess2 = "營收月份代號尚未送出！"
-##
+
         #mess2 = "該表單尚未送出！2"
     return render(request, "stockPERsegx.html", locals())
 

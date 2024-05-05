@@ -60,8 +60,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 
-DATABASES = {}
-
+#DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',  #must be 'djongo'
+        'ENFORCE_SCHEMA': False, # true will be stricter
+        'NAME': 'test4', #collection name
+        'CLIENT': {
+            'host': 'mongodb+srv://pyfbsdk59:NHd4ZEVmHONPZiYD@mongodb-restful.5xgpkpw.mongodb.net/?retryWrites=true&w=majority',
+        }
+    }
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
