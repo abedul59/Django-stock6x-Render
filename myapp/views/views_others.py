@@ -16,7 +16,7 @@ from module import func5x2
 from module import func6
 from module import func8, func7
 '''
-from module import func_usbond
+#from module import func_usbond
 ##################函式位置改寫，一個函式一個檔案，棄用func
 #from module_PERseg import Price5yDB, Price5y, PERseg, PERsegPEG, PERsegPEGxDB, PERsegStable, PERsegx, PERsegxDB, NetCapDB, PERseg3
 
