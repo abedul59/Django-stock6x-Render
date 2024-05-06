@@ -41,6 +41,8 @@ urlpatterns = [
         path('index/', views.index),
         path('login/', views.login),
         path('logout/', views.logout),
+
+        path('adminmain/', views.adminmain),
 	]
 
 
