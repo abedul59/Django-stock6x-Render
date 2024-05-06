@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+'''
 from module import func0
 from module import func
 from module import func2
@@ -13,10 +14,11 @@ from module import func4x
 from module import func5
 from module import func5x2
 from module import func6
-from module import func7
-from module import func8, func_usbond
+from module import func8, func7
+'''
+from module import func_usbond
 ##################函式位置改寫，一個函式一個檔案，棄用func
-from module_PERseg import Price5yDB, Price5y, PERseg, PERsegPEG, PERsegPEGxDB, PERsegStable, PERsegx, PERsegxDB, NetCapDB, PERseg3
+#from module_PERseg import Price5yDB, Price5y, PERseg, PERsegPEG, PERsegPEGxDB, PERsegStable, PERsegx, PERsegxDB, NetCapDB, PERseg3
 
 
 #################
@@ -46,47 +48,48 @@ def adminmain(request, pageindex=None):  #管理頁面
 
     #個別績效串列 
     #一週 一個月 六個月一年
-    try:
-        Lists3m = func_usbond.getUSBondYield3m()
-    except:
-        Lists3m = func_usbond.getUSBondYield3m()
+	
+    #try:
+        #Lists3m = func_usbond.getUSBondYield3m()
+    #except:
+        #Lists3m = func_usbond.getUSBondYield3m()
         
-    try:
-        Lists6m = func_usbond.getUSBondYield6m()
-    except:
-        Lists6m = func_usbond.getUSBondYield6m()
+    #try:
+        #Lists6m = func_usbond.getUSBondYield6m()
+    #except:
+        #Lists6m = func_usbond.getUSBondYield6m()
     
-    try:
-        Lists2y = func_usbond.getUSBondYield2y()
-    except:
-        Lists2y = func_usbond.getUSBondYield2y()
+    #try:
+        #Lists2y = func_usbond.getUSBondYield2y()
+    #except:
+        #Lists2y = func_usbond.getUSBondYield2y()
     
     
-    try:
-        Lists3y = func_usbond.getUSBondYield3y()
-    except:
-        Lists3y = func_usbond.getUSBondYield3y()
+    #try:
+        #Lists3y = func_usbond.getUSBondYield3y()
+    #except:
+        #Lists3y = func_usbond.getUSBondYield3y()
         
-    try:
-        Lists5y = func_usbond.getUSBondYield5y()
-    except:
-        Lists5y = func_usbond.getUSBondYield5y()
+    #try:
+        #Lists5y = func_usbond.getUSBondYield5y()
+    #except:
+        #Lists5y = func_usbond.getUSBondYield5y()
 
-    try:
-        Lists7y = func_usbond.getUSBondYield7y()
-    except:
-        Lists7y = func_usbond.getUSBondYield7y()
+    #try:
+        #Lists7y = func_usbond.getUSBondYield7y()
+    #except:
+        #Lists7y = func_usbond.getUSBondYield7y()
 
-    try:
-        Lists10y = func_usbond.getUSBondYield10y()
-    except:
-        Lists10y = func_usbond.getUSBondYield10y()
+    #try:
+        #Lists10y = func_usbond.getUSBondYield10y()
+    #except:
+        #Lists10y = func_usbond.getUSBondYield10y()
     
     
-    try:
-        Lists30y = func_usbond.getUSBondYield30y()
-    except:
-        Lists30y = func_usbond.getUSBondYield30y()
+    #try:
+        #Lists30y = func_usbond.getUSBondYield30y()
+    #except:
+        #Lists30y = func_usbond.getUSBondYield30y()
 
     
     global page1u
@@ -239,7 +242,7 @@ tseotc_dict = {'台泥': '1101', '亞泥': '1102', '嘉泥': '1103', '環泥': '
 
 def index2(request):
 	if request.user.is_authenticated:
-	   name=request.user.username
+		name=request.user.username
 
 	return render(request, "index2.html", locals())
 
