@@ -1,6 +1,6 @@
 from django.shortcuts import render
 ###
-def index(request):  #首頁
+def index3(request):  #首頁
     
 
-	return render(request, "index.html", locals())
+	return render(request, "index3.html", locals())
